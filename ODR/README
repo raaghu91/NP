@@ -1,0 +1,23 @@
+Submitted by:
+Raghavendra Kumar, SBU ID: 110009168, netid: ragkumar
+Subin Cyriac Mathew, SBU ID: 110049777, netid: scmathew
+
+defines.h: All relevant defines(CLIENT_TIMEOUT, DFLT_STALENESS,..) can be found in this file.
+
+client.c : Client Program, sends msg to ODR and receives response from local ODR.
+
+local_msgs.c : msg_send, msg_recv implementation, builds,parses local messages to/from ODR to/from client/server.
+
+odr.c: Main ODR program, implements *all* functionality as per the spec.
+       Can be invoked with ./ODR_ragkumar or ./ODR_ragkumar <staleness_value>. Default is 60 seconds.
+
+odr_msgs.c: Builds, Parses RREQ, RRESP, PAYLOAD_MSG, convert to host/network format etc.
+
+path_port_mapping.c: Maintain the mapping between Client Path Name and ODR assigned Port names for them.
+
+route_hash_table.c: Routing Hash Table for efficient Lookup
+
+send_queue.c: Queue to store PAYLOAD_MSGs while RREQ is in progress, will retransmit when we receive RREPs.
+	      Also implemented purging based on timestamps if RREPs are not received in 5 seconds.
+
+server.c: Server program to serve the current Time. Receives a message from local ODR, responds back with the time. 

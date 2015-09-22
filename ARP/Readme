@@ -1,0 +1,25 @@
+NP4 Submission by:
+Ragavendra Kumar, SBUI ID: 110009168, netid: ragkumar
+Subin Cyriac Mathew, SBU ID: 110049777, netid: scmathew
+
+~1600 lines of code
+
+Files:
+=====
+arp.c : - Implements the ARP module. Includes an ARP cache as per the specification. 
+	- Stores the IP address in Network byte order as the key for efficiency.
+	- Prints out ARP req/response at sender/receiver as per ARP/RARP handout.
+
+get_hw_addrs.c : Provenence in ~cse533/Asgn3_code/*
+
+defines.h: All relevent Constants
+
+hwaddr_def.h: Definition of struct hwaddr
+hw_addrs.h : Utility Routine to marshal data in hwaddr format between tour and arp modules.
+
+ip_hdr.h, ip_hdr.c : Utility files to build and parse IP headers
+icmp_msg.h, icmp_msg.c : Utility files to build and parse ICMP headers
+
+tour.c: Tour application module as per the specification.
+
+All cases specified in http://www3.cs.stonybrook.edu/~cse533/asgn4/asgn4.html have been tested and verified.
